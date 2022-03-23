@@ -73,7 +73,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan=" {% if type == "user" %} 5 {% else %} 4 {% endif %} ">no records found</td>
+                <td colspan=" {% if type == "user" %} 5 {% else %} 4 {% endif %} ">{% trans %}wordingd.noRecords{% endtrans %}</td>
             </tr>
         {% endfor %}
         </tbody>

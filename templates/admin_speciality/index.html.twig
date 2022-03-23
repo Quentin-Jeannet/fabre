@@ -1,37 +1,40 @@
 {% extends 'base-back.html.twig' %}
 
-{% block title %}Speciality index{% endblock %}
+{% block title %}{% trans %}titles.newSpeciality{% endtrans %}{% endblock %}
 
 {% block body %}
-    <h1>Speciality index</h1>
-
+    <a href="{{ path('app_admin_speciality_new') }}" class="btn btn-primary">{% trans %}titles.newSpeciality{% endtrans %}</a>
+    <h1>{% trans %}titles.newSpeciality{% endtrans %}</h1>
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>IsActive</th>
-                <th>actions</th>
+                {% if is_granted("ROLE_SUPERADMIN") %}
+                <th>{% trans %}tableHeaders.id{% endtrans %}</th>
+                {% endif %}
+                <th>{% trans %}tableHeaders.name{% endtrans %}</th>
+                <th>{% trans %}tableHeaders.isActive{% endtrans %}</th>
+                <th class="text-end">{% trans %}tableHeaders.actions{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
         {% for speciality in specialities %}
             <tr>
+                {% if is_granted("ROLE_SUPERADMIN") %}
                 <td>{{ speciality.id }}</td>
+                {% endif %}
                 <td>{{ speciality.name }}</td>
-                <td>{{ speciality.isActive ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('app_admin_speciality_show', {'id': speciality.id}) }}">show</a>
-                    <a href="{{ path('app_admin_speciality_edit', {'id': speciality.id}) }}">edit</a>
+                <td>{{ speciality.isActive ? '<i class="align-middle text-success" data-feather="check-circle"></i>' : '<i class="align-middle text-danger" data-feather="x-circle"></i>' }}</td>
+                <td class="text-end">
+                    <a href="{{ path('app_admin_speciality_show', {'id': speciality.id}) }}" class="btn btn-warning text-white"><i class="align-middle" data-feather="eye"></i></a>
+                    <a href="{{ path('app_admin_speciality_edit', {'id': speciality.id}) }}" class="btn btn-primary"><i class="align-middle" data-feather="edit-2"></i></a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="{% if is_granted("ROLE_SUPERADMIN") %}4{% else %} 3 {% endif %}">{% trans %}wordingd.noRecords{% endtrans %}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_speciality_new') }}">Create new</a>
 {% endblock %}

@@ -20,6 +20,9 @@ titles:
   newAdmin: Nouvel administrateur
   showUser: Utilisateur
   showAdmin: Administrateur
+  newSpeciality: Nouvelle spécialité
+  speciality: Spécialité
+  editSpeciality: Modifier Spécialité
 tableHeaders:
   actions: Actions
   id: Id
@@ -36,6 +39,8 @@ tableHeaders:
   country: Pays
   mobilePhone: Téléphone mobile
   isWaitingCertificate: Souhaite le certificat
+  isActive: Active
+  slug: Slug
 choices:
   yes: Oui 
   no: Non
@@ -44,3 +49,5 @@ alerts:
 cta: 
   valid: Valider 
   update: Modifier
+wordings:
+  noRecords: Pas d'enregistrement en base de données

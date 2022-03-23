@@ -20,6 +20,9 @@ titles:
   newAdmin: New administrator
   showUser: User
   showAdmin: Administrator
+  newSpeciality: New speciality
+  speciality: Speciality
+  editSpeciality: Edit Speciality
 tableHeaders:
   actions: Actions
   id: Id
@@ -36,6 +39,8 @@ tableHeaders:
   country: Country
   mobilePhone: Mobile phone
   isWaitingCertificate: Wants the certificate
+  isActive: Active
+  slug: Slug
 choices:
   yes: Yes 
   no: No
@@ -44,3 +49,5 @@ alerts:
 cta: 
   valid: Valid
   update: Update
+wordings:
+  noRecords: no records found

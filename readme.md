@@ -18,7 +18,7 @@
 
 ### 23/03/2022
 
-* finalisation CRUD des User
+* Finalisation CRUD des User
 * Installation PhpSpreadSheet
-
+* Finalisation CRUD des Speciality
 

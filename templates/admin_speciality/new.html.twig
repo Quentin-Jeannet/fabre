@@ -1,11 +1,13 @@
 {% extends 'base-back.html.twig' %}
 
-{% block title %}New Speciality{% endblock %}
+{% block title %}
+    {% trans %}titles.newSpeciality{% endtrans %}
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Speciality</h1>
+    <a href="{{ path('app_admin_speciality_index') }}" class="btn btn-primary"><i class="align-middle" data-feather="arrow-left"></i></a>
+    <h1>{% trans %}titles.newSpeciality{% endtrans %}</h1>
 
     {{ include('admin_speciality/_form.html.twig') }}
 
-    <a href="{{ path('app_admin_speciality_index') }}">back to list</a>
 {% endblock %}
