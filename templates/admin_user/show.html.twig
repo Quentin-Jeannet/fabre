@@ -1,6 +1,12 @@
 {% extends 'base-back.html.twig' %}
 
-{% block title %}{% trans %}titles.showUser{% endtrans %}{% endblock %}
+{% block title %}
+{% if type == "user" %}
+{% trans %}titles.showUser{% endtrans %}
+{% else %}
+{% trans %}titles.showAdmin{% endtrans %}
+{% endif %}
+{% endblock %}
 
 {% block body %}
 <div class="d-flex justify-content-between">
@@ -12,16 +18,22 @@
 <div class="d-flex">
 {{ include('admin_user/_delete_form.html.twig') }}
 {% if type=="user"%}
-<a href="{{ path('app_user_edit', {'id': user.id}) }}" class="btn btn-primary ms-3"><i class="align-middle" data-feather="edit-2"></i></a>
+<a href="{{ path('app_user_edit', {'type': type, 'id': user.id}) }}" class="btn btn-primary ms-3"><i class="align-middle" data-feather="edit-2"></i></a>
 {% else %}
-<a href="{{ path('app_admin_edit', {'id': user.id}) }}" class="btn btn-primary ms-3"><i class="align-middle" data-feather="edit-2"></i></a>
+<a href="{{ path('app_admin_edit', {'type': type, 'id': user.id}) }}" class="btn btn-primary ms-3"><i class="align-middle" data-feather="edit-2"></i></a>
 
 {% endif %}
 </div>
 </div>
 
 
-    <h1>{% trans %}titles.showUser{% endtrans %}</h1>
+    <h1>
+    {% if type == "user" %}
+{% trans %}titles.showUser{% endtrans %}
+{% else %}
+{% trans %}titles.showAdmin{% endtrans %}
+{% endif %}
+    </h1>
 
     <table class="table">
         <tbody>

@@ -63,9 +63,12 @@
                 <td>{{ user.mobilePhone }}</td>
                 <td>{{ user.isWaitingCertificate ? 'Yes' : 'No' }}</td> #}
                 <td class="text-end">
-
                     <a href="{{ path('app_admin_user_show', {'type': type, 'id': user.id}) }}" class="btn btn-warning text-white"><i class="align-middle" data-feather="eye"></i></a>
-                    <a href="{{ path('app_admin_user_edit', {'type': type, 'id': user.id}) }}" class="btn btn-primary"><i class="align-middle" data-feather="edit-2"></i></a>
+                {% if type == "user" %}
+                    <a href="{{ path('app_user_edit', {'type': type, 'id': user.id}) }}" class="btn btn-primary"><i class="align-middle" data-feather="edit-2"></i></a>
+                {% else %}
+                    <a href="{{ path('app_admin_edit', {'type': type, 'id': user.id}) }}" class="btn btn-primary"><i class="align-middle" data-feather="edit-2"></i></a>
+                {% endif %}
                 </td>
             </tr>
         {% else %}

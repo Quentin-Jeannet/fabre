@@ -104,40 +104,30 @@ class AdminUserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_admin_edit", methods={"GET", "POST"})
+     * @Route("/{type}/{id}/edit", name="app_admin_edit", methods={"GET", "POST"})
+     * @Route("/{type}/{id}/edit", name="app_user_edit", methods={"GET", "POST"})
      */
-    public function edit(Request $request, User $user, UserRepository $userRepository): Response
+    public function editAdmin(Request $request, User $user, UserRepository $userRepository, string $type): Response
     {
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(AdminUserType::class, $user);
+        if($type=="user"){
+            $form = $this->createForm(UserType::class, $user);
+        }
+        
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $userRepository->add($user);
-            return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
+            $userRepository->add($user, true);
+            if($type=="admin"){
+                return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
+            }else{
+                return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
+            }
         }
-
         return $this->renderForm('admin_user/edit.html.twig', [
             'user' => $user,
             'form' => $form,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="app_user_edit", methods={"GET", "POST"})
-     */
-    public function editUser(Request $request, User $user, UserRepository $userRepository): Response
-    {
-        $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $userRepository->add($user);
-            return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('admin_user/edit.html.twig', [
-            'user' => $user,
-            'form' => $form,
+            'type' => $type
         ]);
     }
 

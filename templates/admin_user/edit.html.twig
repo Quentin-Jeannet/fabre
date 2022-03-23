@@ -1,12 +1,28 @@
 {% extends 'base-back.html.twig' %}
 
-{% block title %}{% trans %}titles.editUser{% endtrans %}{% endblock %}
+{% block title %}
+{% if type == "user" %}
+{% trans %}titles.editUser{% endtrans %}
+{% else %}
+{% trans %}titles.editAdmin{% endtrans %}
+{% endif %}
+{% endblock %}
 
 {% block body %}
 <div class="d-flex justify-content-between">
-<a href="{{ path('app_admin_user_index') }}" class="btn btn-primary"><i class="align-middle" data-feather="arrow-left"></i></a>
+{% if type =="user" %}
+<a href="{{ path('app_user_index') }}" class="btn btn-primary"><i class="align-middle" data-feather="arrow-left"></i></a>
+{% else %}
+<a href="{{ path('app_admin_index') }}" class="btn btn-primary"><i class="align-middle" data-feather="arrow-left"></i></a>
+{% endif %}
 {{ include('admin_user/_delete_form.html.twig') }}
 </div>
-    <h1>{% trans %}titles.editUser{% endtrans %}</h1>
+    <h1>
+    {% if type == "user" %}
+    {% trans %}titles.editUser{% endtrans %}
+    {% else %}
+    {% trans %}titles.editAdmin{% endtrans %}
+    {% endif %}
+    </h1>
     {{ include('admin_user/_form.html.twig', {'button_label': 'Update'}) }}
 {% endblock %}

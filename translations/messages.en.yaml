@@ -15,9 +15,11 @@ titles:
   indexUser: Users
   indexAdministrators: Administrators
   editUser: Edit user
+  editAdmin: Edit adminsitrator
   newUser: New user
-  newAdmin: Nouvel administrator
+  newAdmin: New administrator
   showUser: User
+  showAdmin: Administrator
 tableHeaders:
   actions: Actions
   id: Id
