@@ -1,0 +1,23 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}
+    {% if type == "user" %}
+        {% trans %}titles.newUser{% endtrans %}
+    {% else %}
+        {% trans %}titles.newAdmin{% endtrans %}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-between">
+        <a href="{{ path('app_user_index') }}" class="btn btn-primary"><i class="align-middle" data-feather="arrow-left"></i></a>
+    </div>
+    <h1>
+    {% if type == "user" %}
+        {% trans %}titles.newUser{% endtrans %}
+    {% else %}
+        {% trans %}titles.newAdmin{% endtrans %}
+    {% endif %}
+    </h1>
+    {{ include('admin_user/_form.html.twig') }}
+{% endblock %}

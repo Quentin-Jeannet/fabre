@@ -1,0 +1,44 @@
+menus:
+  dashboard: Dashboard
+  users: Users
+  admins: Administrators
+  specialities: Specialities
+  sessionAlonis: Alonis sessions
+  sessionMaxiqua: Maxiqa sessions
+  titles:
+    block1: Utilisateurs et spécialités
+    block2: Alonis Live
+    block3: Maxiqa sessions
+titles:
+  users: Users
+  administrators: Administrators
+  indexUser: Users
+  indexAdministrators: Administrators
+  editUser: Edit user
+  newUser: New user
+  newAdmin: Nouvel administrator
+  showUser: User
+tableHeaders:
+  actions: Actions
+  id: Id
+  name: Name
+  firstname: Firstname
+  email: Email
+  speciality: Speciality
+  password: Password 
+  repeatPassword: Repeat password
+  institution: Institution 
+  businessAddress: Business address
+  city: City
+  zipcode: Zipcode
+  country: Country
+  mobilePhone: Mobile phone
+  isWaitingCertificate: Wants the certificate
+choices:
+  yes: Yes 
+  no: No
+alerts:
+  delete: Are you sure you want to delete this item?
+cta: 
+  valid: Valid
+  update: Update

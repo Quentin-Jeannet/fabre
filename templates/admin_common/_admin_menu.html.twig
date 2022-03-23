@@ -1,0 +1,90 @@
+<nav id="sidebar" class="sidebar js-sidebar">
+    <div class="sidebar-content js-simplebar">
+        <a class="sidebar-brand" href="index.html">
+            <span class="align-middle">
+                Admin Nerlyfe Invesigator Meeting                 
+            </span>
+        </a>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item active">
+                <a class="sidebar-link" href="{{ path('app_admin_dashboard') }}">
+                    <i class="align-middle" data-feather="sliders"></i>
+                    <span class="align-middle">
+                        {% trans %}
+                        menus.dashboard 
+                        {% endtrans %}
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar-header">
+                {% trans %}
+                menus.titles.block1 
+                {% endtrans %}
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ path('app_admin_index') }}">
+                    <i class="align-middle" data-feather="users"></i>
+                    <span class="align-middle">
+                        {% trans %}
+                        menus.admins 
+                        {% endtrans %}
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ path('app_user_index') }}">
+                    <i class="align-middle" data-feather="users"></i>
+                    <span class="align-middle">
+                        {% trans %}
+                        menus.users 
+                        {% endtrans %}
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="">
+                    <i class="align-middle" data-feather="award"></i>
+                    <span class="align-middle">
+                        {% trans %}
+                        menus.specialities 
+                        {% endtrans %}
+                    </span>
+                </a>
+            </li>
+            {% if useAlonis %}
+            <li class="sidebar-header">
+                {% trans %}
+                menus.titles.block2 
+                {% endtrans %}
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="">
+                    <i class="align-middle" data-feather="video"></i>
+                    <span class="align-middle">
+                        {% trans %}
+                        menus.sessionAlonis 
+                        {% endtrans %}
+                    </span>
+                </a>
+            </li>
+            {% endif %}
+            {% if useMaxiqa %}
+            <li class="sidebar-header">
+                {% trans %}
+                menus.titles.block3 
+                {% endtrans %}
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="">
+                    <i class="align-middle" data-feather="bar-chart-2"></i>
+                    <span class="align-middle">
+                        {% trans %}
+                        menus.sessionMaxiqua 
+                        {% endtrans %}
+                    </span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

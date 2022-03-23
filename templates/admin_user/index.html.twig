@@ -1,0 +1,78 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}
+    {% if type == "user" %}
+        {% trans %}titles.indexUsers{% endtrans %}
+    {% else %}
+        {% trans %}titles.indexAdministrators{% endtrans %}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {% if type == "user" %}
+    <a href="{{ path('app_user_new') }}" class="btn btn-primary" >{% trans %}titles.newUser{% endtrans %}</a>
+    {% else %}
+    <a href="{{ path('app_admin_new') }}" class="btn btn-primary" >{% trans %}titles.newAdmin{% endtrans %}</a>
+    {% endif %}
+    <h1>
+        {% if type == "user" %}
+            {% trans %}titles.indexUsers{% endtrans %}
+        {% else %}
+            {% trans %}titles.indexAdministrators{% endtrans %}
+        {% endif %}
+    </h1>
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                {# <th>{% trans %}tableHeaders.id{% endtrans %}</th> #}
+                <th>{% trans %}tableHeaders.name{% endtrans %}</th>
+                <th>{% trans %}tableHeaders.firstname{% endtrans %}</th>
+                <th>{% trans %}tableHeaders.email{% endtrans %}</th>
+                {% if type == "user" %}
+                <th>{% trans %}tableHeaders.speciality{% endtrans %}</th>
+                {% endif %}
+                {# <th>Roles</th>
+                <th>Password</th>
+                <th>InstitutionName</th>
+                <th>BusinessAddress</th>
+                <th>City</th>
+                <th>Zipcode</th>
+                <th>Country</th>
+                <th>MobilePhone</th>
+                <th>IsWaitingCertificate</th> #}
+                <th class="text-end">{% trans %}tableHeaders.actions{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                {# <td>{{ user.id }}</td> #}
+                <td>{{ user.name }}</td>
+                <td>{{ user.firstname }}</td>
+                <td>{{ user.email }}</td>
+                {% if type == "user" %}
+                <td>{{ user.speciality}}</td>
+                {% endif %}
+                {# <td>{{ user.roles ? user.roles|json_encode : '' }}</td> #}
+                {# <td>{{ user.password }}</td> #}
+                {# <td>{{ user.institutionName }}</td>
+                <td>{{ user.businessAddress }}</td>
+                <td>{{ user.city }}</td>
+                <td>{{ user.zipcode }}</td>
+                <td>{{ user.country }}</td>
+                <td>{{ user.mobilePhone }}</td>
+                <td>{{ user.isWaitingCertificate ? 'Yes' : 'No' }}</td> #}
+                <td class="text-end">
+
+                    <a href="{{ path('app_admin_user_show', {'type': type, 'id': user.id}) }}" class="btn btn-warning text-white"><i class="align-middle" data-feather="eye"></i></a>
+                    <a href="{{ path('app_admin_user_edit', {'type': type, 'id': user.id}) }}" class="btn btn-primary"><i class="align-middle" data-feather="edit-2"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan=" {% if type == "user" %} 5 {% else %} 4 {% endif %} ">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
