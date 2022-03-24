@@ -20,10 +20,16 @@ titles:
   newAdmin: Nouvel administrateur
   showUser: Utilisateur
   showAdmin: Administrateur
+<<<<<<< HEAD
   contact: Contact/Infos
   face: Programme présentiel
   remote: Programme distanciel
   home: Accueil
+=======
+  newSpeciality: Nouvelle spécialité
+  speciality: Spécialité
+  editSpeciality: Modifier Spécialité
+>>>>>>> fd11046ba576e8391481704291de78160cafc78a
 tableHeaders:
   actions: Actions
   id: Id
@@ -40,6 +46,7 @@ tableHeaders:
   country: Pays
   mobilePhone: Téléphone mobile
   isWaitingCertificate: Souhaite le certificat
+<<<<<<< HEAD
   meeting: 'J’assiste à la réunion INVESTIGATOR de l’étude NERLYFE :'
   remotely: 'J’assiste à la réunion INVESTIGATOR de l’étude NERLYFE à distance :'
   train: 'J’ai besoin d’un train :'
@@ -47,6 +54,10 @@ tableHeaders:
   flight: 'J’ai besoin d’un vol :'
   airport: Veuillez indiquer le nom de l’aéroport à partir du quel vous voyagerez
   hotel: 'Je vais rester et assister en personne au congrès ESMO BREAST et j’ai besoin d’une chambre d’hôtel pour la nuit du 2 mai :'
+=======
+  isActive: Active
+  slug: Slug
+>>>>>>> fd11046ba576e8391481704291de78160cafc78a
 choices:
   yes: Oui 
   no: Non
@@ -55,6 +66,7 @@ alerts:
 cta: 
   valid: Valider 
   update: Modifier
+<<<<<<< HEAD
 nav:
   presentiel: Programme présentiel 
   remotely: Programme distanciel
@@ -65,3 +77,7 @@ register:
   survey: Survey
   yourInfo: Vos informations personnelles
 
+=======
+wordings:
+  noRecords: Pas d'enregistrement en base de données
+>>>>>>> fd11046ba576e8391481704291de78160cafc78a

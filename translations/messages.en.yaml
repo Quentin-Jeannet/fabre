@@ -24,6 +24,9 @@ titles:
   face: On-site program
   remote: Remotely program
   home: Home
+  newSpeciality: New speciality
+  speciality: Speciality
+  editSpeciality: Edit Speciality
 tableHeaders:
   actions: Actions
   id: Id
@@ -47,6 +50,8 @@ tableHeaders:
   flight: I need a flight
   airport: Please indicate the name of the airport station that you will be travelling from
   hotel: I will stay over and attend in person to ESMO BREAST congress and I need an hotel room for the night of 2nd of May
+  isActive: Active
+  slug: Slug
 choices:
   yes: Yes 
   no: No
@@ -55,6 +60,7 @@ alerts:
 cta: 
   valid: Valid
   update: Update
+<<<<<<< HEAD
   register:
   title: Registration
 nav:
@@ -68,3 +74,7 @@ register:
   yourInfo: Your personal information
 
 
+=======
+wordings:
+  noRecords: no records found
+>>>>>>> fd11046ba576e8391481704291de78160cafc78a
