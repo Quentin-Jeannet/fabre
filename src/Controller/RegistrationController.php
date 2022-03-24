@@ -32,6 +32,20 @@ class RegistrationController extends AbstractController
     }
 
     /**
+     * @route("/testmail", name="test_mail")
+     */
+    public function testMail(MailerInterface $mailer){
+        $email = (new TemplatedEmail())
+        ->from('hello@example.com')
+        ->to('quentin@graphikchannel.com')
+        ->subject('subject')
+        ->htmlTemplate('mail/isAttentingMeeting.html.twig');
+        $mailer->send($email);
+
+        return $this->redirectToRoute('app_front');
+    }
+
+    /**
      * @Route("/register", name="app_register")
      */
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthenticator $authenticator, EntityManagerInterface $entityManager, MailerInterface $mailer, TranslatorInterface $translator): Response
@@ -126,17 +140,5 @@ class RegistrationController extends AbstractController
 
         return $this->redirectToRoute('app_register');
     }
-    /**
-     * @route("/testmail", name="test_mail")
-     */
-    public function testMail(MailerInterface $mailer){
-        $email = (new TemplatedEmail())
-        ->from('hello@example.com')
-        ->to('hello@example.com')
-        ->subject('subject')
-        ->htmlTemplate('mail/isAttentingMeeting.html.twig');
-        $mailer->send($email);
 
-        return $this->redirectToRoute('app_front');
-    }
 }
