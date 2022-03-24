@@ -36,7 +36,7 @@ class RegistrationController extends AbstractController
      */
     public function testMail(MailerInterface $mailer){
         $email = (new TemplatedEmail())
-        ->from('hello@example.com')
+        ->from('no-reply@nerlyfe-investigator-meeting.com')
         ->to('quentin@graphikchannel.com')
         ->subject('subject')
         ->htmlTemplate('mail/isAttentingMeeting.html.twig');
