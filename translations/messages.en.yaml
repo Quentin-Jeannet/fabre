@@ -49,7 +49,8 @@ tableHeaders:
   station: Please indicate the name of the train station that you will be travelling from
   flight: I need a flight
   airport: Please indicate the name of the airport station that you will be travelling from
-  hotel: I will stay over and attend in person to ESMO BREAST congress and I need an hotel room for the night of 2nd of May
+  hotel: I will stay over and attend in person to ESMO BREAST congress and I need an hotel room for the night of 2nd of May 
+    (please be informed that Pierre Fabre takes in charge only the night of the May of the 2nd. Additional nights and Congress registration are not taken in charge)
   isActive: Active
   slug: Slug
 choices:
@@ -69,9 +70,10 @@ nav:
   contact: Contact/Infos
 register:
   title: Register
-  survey: Questionnaire
+  survey: Survey
   yourInfo: Your personal information
-
-
+  isAttendingNo : We thank you for your answer. Pierre Fabre Nerlyfe Team
+  remotelyYes: A link to login will be sent to the address you will register below
+  trainFlightNo : Nous notons que vous venez par vos propres moyens
 wordings:
   noRecords: no records found

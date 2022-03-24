@@ -43,13 +43,13 @@ tableHeaders:
   country: Pays
   mobilePhone: Téléphone mobile
   isWaitingCertificate: Souhaite le certificat
-  meeting: 'J’assiste à la réunion INVESTIGATOR de l’étude NERLYFE :'
-  remotely: 'J’assiste à la réunion INVESTIGATOR de l’étude NERLYFE à distance :'
-  train: 'J’ai besoin d’un train :'
+  meeting: J’assiste à la réunion INVESTIGATOR de l’étude NERLYFE
+  remotely: J’assiste à la réunion INVESTIGATOR de l’étude NERLYFE à distance
+  train: J’ai besoin d’un train
   station: Veuillez indiquer le nom de la gare à partir de laquelle vous voyagerez 
-  flight: 'J’ai besoin d’un vol :'
+  flight: J’ai besoin d’un vol
   airport: Veuillez indiquer le nom de l’aéroport à partir du quel vous voyagerez
-  hotel: 'Je vais rester et assister en personne au congrès ESMO BREAST et j’ai besoin d’une chambre d’hôtel pour la nuit du 2 mai :'
+  hotel: Je vais rester et assister en personne au congrès ESMO BREAST et j’ai besoin d’une chambre d’hôtel pour la nuit du 2 mai (veuillez noter que Pierre Fabre ne prend en charge que la nuit du 2 mai. Les nuits supplémentaires et l'inscription au Congrès ne sont pas prises en charge)
   isActive: Active
   slug: Slug
 choices:
@@ -69,5 +69,8 @@ register:
   title: Inscription
   survey: Survey
   yourInfo: Vos informations personnelles
+  isAttendingNo : Nous vous remercions pour votre réponse. L'équipe Pierre Fabre Nerlyfe
+  remotelyYes: Un lien de connexion sera envoyé à l'adresse que vous enregistrerez ci-dessous
+  trainFlightNo : We note that you come on your own
 wordings:
   noRecords: Pas d'enregistrement en base de données
