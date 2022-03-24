@@ -60,7 +60,6 @@ alerts:
 cta: 
   valid: Valid
   update: Update
-<<<<<<< HEAD
   register:
   title: Registration
 nav:
@@ -74,7 +73,5 @@ register:
   yourInfo: Your personal information
 
 
-=======
 wordings:
   noRecords: no records found
->>>>>>> fd11046ba576e8391481704291de78160cafc78a
