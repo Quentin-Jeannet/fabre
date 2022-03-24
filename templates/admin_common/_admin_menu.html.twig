@@ -51,6 +51,21 @@
                     </span>
                 </a>
             </li>
+            <li class="sidebar-header">
+            {% trans %}
+            menus.titles.block4
+            {% endtrans %}
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ path('app_admin_programs_index') }}">
+                    <i class="align-middle" data-feather="list"></i>
+                    <span class="align-middle">
+                        {% trans %}
+                        menus.programs 
+                        {% endtrans %}
+                    </span>
+                </a>
+            </li>
             {% if useAlonis %}
             <li class="sidebar-header">
                 {% trans %}

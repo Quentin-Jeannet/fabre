@@ -5,10 +5,12 @@ menus:
   specialities: Spécialités
   sessionAlonis: Alonis sessions
   sessionMaxiqua: Maxiqa sessions
+  programs: Programmes
   titles:
     block1: Utilisateurs et spécialités
     block2: Alonis Live
     block3: Maxiqa sessions
+    block4: Programmes
 titles:
   users: Utilisateurs
   administrators: Administrateurs
@@ -27,6 +29,9 @@ titles:
   newSpeciality: Nouvelle spécialité
   speciality: Spécialité
   editSpeciality: Modifier Spécialité
+  programs: Les programmes
+  program: Programme
+  editProgram: Modifier programme
 tableHeaders:
   actions: Actions
   id: Id
@@ -52,6 +57,9 @@ tableHeaders:
   hotel: 'Je vais rester et assister en personne au congrès ESMO BREAST et j’ai besoin d’une chambre d’hôtel pour la nuit du 2 mai :'
   isActive: Active
   slug: Slug
+  description: Description 
+  updatedAt: Mise à jour
+  imageName: Image
 choices:
   yes: Oui 
   no: Non

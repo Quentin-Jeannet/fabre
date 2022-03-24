@@ -2,8 +2,8 @@ twig:
     default_path: '%kernel.project_dir%/templates'
     form_themes: ['bootstrap_5_horizontal_layout.html.twig']
     globals :
-        useAlonis: true
-        useMaxiqa: true
+        useAlonis: false
+        useMaxiqa: false
 
 when@test:
     twig:

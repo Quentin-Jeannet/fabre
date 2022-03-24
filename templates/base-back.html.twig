@@ -10,11 +10,13 @@
         {# BOOTSTRAP BACK APP #}
         {# <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> #}
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/common.min.css') }}">
+        {# <link rel="stylesheet" href="{{ asset('css/common.min.css') }}"> #}
         {# SELECT 2 #}
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        {# LIGHBOX #}
+        <link rel="stylesheet" href="{{ asset('css/lightbox.min.css')}}">
         {# BACK CSS CUSTOM #}
-        <link rel="stylesheet" href="{{ asset('css/toctoctutos-back.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/backoffice.min.css') }}">
         {# FRONT CSS CUSTOM
         <link rel="stylesheet" href="{{ asset('css/toctoctutos-front.min.css') }}"> #}
         {% block stylesheets %}{% endblock %}
@@ -44,7 +46,7 @@
                                 </p>
                             </div>
                             <div class="col-6 text-end">
-                                <ul class="list-inline">
+                                {# <ul class="list-inline">
                                     <li class="list-inline-item">
                                         <a class="text-muted" href="https://adminkit.io/" target="_blank">
                                             Support
@@ -65,7 +67,7 @@
                                             Terms
                                         </a>
                                     </li>
-                                </ul>
+                                </ul> #}
                             </div>
                         </div>
                     </div>
@@ -74,6 +76,7 @@
         </div>
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="{{ asset('js/lightbox.min.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         {% block javascripts %}
         {% endblock %}

@@ -5,14 +5,16 @@ menus:
   specialities: Specialities
   sessionAlonis: Alonis sessions
   sessionMaxiqua: Maxiqa sessions
+  programs: Programs
   titles:
     block1: Utilisateurs et spécialités
     block2: Alonis Live
     block3: Maxiqa sessions
+    block4: Programs
 titles:
   users: Users
   administrators: Administrators
-  indexUser: Users
+  indexUsers: Users
   indexAdministrators: Administrators
   editUser: Edit user
   editAdmin: Edit adminsitrator
@@ -27,6 +29,9 @@ titles:
   newSpeciality: New speciality
   speciality: Speciality
   editSpeciality: Edit Speciality
+  programs: Programs
+  program: Program
+  editProgram: Edit program
 tableHeaders:
   actions: Actions
   id: Id
@@ -52,6 +57,9 @@ tableHeaders:
   hotel: I will stay over and attend in person to ESMO BREAST congress and I need an hotel room for the night of 2nd of May
   isActive: Active
   slug: Slug
+  description: Description 
+  updatedAt: Updated at
+  imageName: Image
 choices:
   yes: Yes 
   no: No
@@ -71,7 +79,5 @@ register:
   title: Register
   survey: Questionnaire
   yourInfo: Your personal information
-
-
 wordings:
   noRecords: no records found
