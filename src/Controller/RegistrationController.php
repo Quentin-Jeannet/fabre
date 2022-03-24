@@ -136,5 +136,7 @@ class RegistrationController extends AbstractController
         ->subject('subject')
         ->htmlTemplate('mail/isAttentingMeeting.html.twig');
         $mailer->send($email);
+
+        return $this->redirectToRoute('app_front');
     }
 }
