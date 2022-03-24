@@ -1,0 +1,192 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}register.title{% endtrans %}{% endblock %}
+
+{% block body %}
+<div class="container">
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <h1>{% trans %}register.title{% endtrans %}</h1>
+
+    {{ form_start(registrationForm) }}
+
+        {{ form_label(registrationForm.isAttendingMeeting, null, {'label_attr': {'class': 'col-md-12'}}) }}
+        <div class="d-flex">
+            {% for check in registrationForm.isAttendingMeeting %}
+            <div class="me-2">
+                {{ form_widget(check) }}
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="d-none" id="blockMeetingYes">
+            {{ form_label(registrationForm.isRemotely, null, {'label_attr': {'class': 'col-md-12'}}) }}
+            <div class="d-flex">
+                {% for check in registrationForm.isRemotely %}
+                <div class="me-2">
+                    {{ form_widget(check) }}
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="d-none" id="blockRemotelyNo">
+                {{ form_label(registrationForm.isNeedTrain, null, {'label_attr': {'class': 'col-md-12'}}) }}
+                <div class="d-flex">
+                    {% for check in registrationForm.isNeedTrain %}
+                    <div class="me-2">
+                        {{ form_widget(check) }}
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="d-none" id="trainYes">
+                    {{ form_row(registrationForm.trainStation)}}
+                </div>
+        
+                {{ form_label(registrationForm.isNeedFlight, null, {'label_attr': {'class': 'col-md-12'}}) }}
+                <div class="d-flex">
+                    {% for check in registrationForm.isNeedFlight %}
+                    <div class="me-2">
+                        {{ form_widget(check) }}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="d-none" id="trainFlightNo">
+                    {% trans %}register.trainFlightNo{% endtrans %}
+                </div>
+                
+                <div class="d-none" id="flightYes">
+                    {{ form_row(registrationForm.airport)}}
+                </div>
+        
+                {{ form_label(registrationForm.isNeedHotel, null, {'label_attr': {'class': 'col-md-12'}}) }}
+                <div class="d-flex">
+                    {% for check in registrationForm.isNeedHotel %}
+                    <div class="me-2">
+                        {{ form_widget(check) }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="d-none" id="blockRemotelyYes">{% trans %}register.remotelyYes{% endtrans %}</div>
+
+        </div>
+
+        {{ form_row(registrationForm.speciality)}}
+
+        <div class="my-3">
+            {{form_rest(registrationForm)}}
+        </div>
+
+        <button type="submit" class="btn">{% trans %}cta.valid{% endtrans %}</button>
+    {{ form_end(registrationForm) }}
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+    let meeting = document.getElementsByName('registration_form[isAttendingMeeting]');
+    let remotely = document.getElementsByName('registration_form[isRemotely]');
+    let train = document.getElementsByName('registration_form[isNeedTrain]');
+    let flight = document.getElementsByName('registration_form[isNeedFlight]');
+    let trainNo = document.getElementById('registration_form_isNeedTrain_1')
+    let flightNo = document.getElementById('registration_form_isNeedFlight_1')
+    let trainFlightNo = document.getElementById('trainFlightNo')
+    let blockMeetingYes = document.getElementById('blockMeetingYes')
+    let blockRemotelyNo = document.getElementById('blockRemotelyNo')
+    let blockRemotelyYes = document.getElementById('blockRemotelyYes')
+    let trainYes = document.getElementById('trainYes')
+    let flightYes = document.getElementById('flightYes')
+    // console.log(blockMeetingYes);
+    // let meetingNo = document.getElementById('registration_form_isAttendingMeeting_1')
+    // meeting.addEventListener('change', function(event) {
+    //     console.log(this);
+    // })
+    meeting.forEach(element => {
+        element.addEventListener('change', function (e) {
+            if(this.id == 'registration_form_isAttendingMeeting_0') {
+                if(blockMeetingYes.classList.contains('d-none')) {
+                    blockMeetingYes.classList.remove('d-none')
+                }  
+            }else{
+                if(!blockMeetingYes.classList.contains('d-none')) {
+                    blockMeetingYes.classList.add('d-none')
+                }
+            }
+        })
+    })
+    remotely.forEach(element => {
+        element.addEventListener('change', function (e) {
+            if(this.id == 'registration_form_isRemotely_1') {
+                if(blockRemotelyNo.classList.contains('d-none')) {
+                    blockRemotelyNo.classList.remove('d-none')
+                }
+                if(!blockRemotelyYes.classList.contains('d-none')) {
+                    blockRemotelyYes.classList.add('d-none')
+                }
+                
+            }else{
+                if(!blockRemotelyNo.classList.contains('d-none')) {
+                    blockRemotelyNo.classList.add('d-none')
+                }
+                if(blockRemotelyYes.classList.contains('d-none')) {
+                    blockRemotelyYes.classList.remove('d-none')
+                }
+            }
+        })
+    })
+
+    train.forEach(element => {
+        element.addEventListener('change', function (e) {
+            if(this.id == 'registration_form_isNeedTrain_0') {
+                if(trainYes.classList.contains('d-none')) {
+                    trainYes.classList.remove('d-none')
+                }  
+            }else{
+                if(!trainYes.classList.contains('d-none')) {
+                    trainYes.classList.add('d-none')
+                }
+            }
+            
+            if (trainNo.checked && flightNo.checked) {
+                if (trainFlightNo.classList.contains('d-none')) {
+                    trainFlightNo.classList.remove('d-none')
+                }
+            }else{
+                if (!trainFlightNo.classList.contains('d-none')) {
+                    trainFlightNo.classList.add('d-none')
+                }
+            }
+        })
+    })
+
+    flight.forEach(element => {
+        element.addEventListener('change', function (e) {
+            if(this.id == 'registration_form_isNeedFlight_0') {
+                if(flightYes.classList.contains('d-none')) {
+                    flightYes.classList.remove('d-none')
+                }  
+            }else{
+                if(!flightYes.classList.contains('d-none')) {
+                    flightYes.classList.add('d-none')
+                }
+            }
+
+            if (trainNo.checked && flightNo.checked) {
+                if (trainFlightNo.classList.contains('d-none')) {
+                    trainFlightNo.classList.remove('d-none')
+                }
+            }else{
+                if (!trainFlightNo.classList.contains('d-none')) {
+                    trainFlightNo.classList.add('d-none')
+                }
+            }
+        })
+    })
+
+
+</script>
+{% endblock %}

@@ -36,6 +36,13 @@ tableHeaders:
   country: Country
   mobilePhone: Mobile phone
   isWaitingCertificate: Wants the certificate
+  meeting: I am attending the INVESTIGATOR meeting of the NERLYFE study
+  remotely: I am attending the investigator meeting of the NERLYFE study remotely
+  train: I need a train
+  station: Please indicate the name of the train station that you will be travelling from
+  flight: I need a flight
+  airport: Please indicate the name of the airport station that you will be travelling from
+  hotel: I will stay over and attend in person to ESMO BREAST congress and I need an hotel room for the night of 2nd of May
 choices:
   yes: Yes 
   no: No
@@ -44,3 +51,5 @@ alerts:
 cta: 
   valid: Valid
   update: Update
+  register:
+  title: Registration

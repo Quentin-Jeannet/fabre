@@ -4,11 +4,13 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -87,6 +89,46 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\ManyToOne(targetEntity=Speciality::class, inversedBy="users")
      */
     private $speciality;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isAttendingMeeting;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isRemotely;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isNeedTrain;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isNeedFlight;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isNeedHotel;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $trainStation;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $airport;
 
 
     // ====================================================== //
@@ -299,6 +341,102 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setSpeciality(?Speciality $speciality): self
     {
         $this->speciality = $speciality;
+
+        return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getIsAttendingMeeting(): ?bool
+    {
+        return $this->isAttendingMeeting;
+    }
+
+    public function setIsAttendingMeeting(?bool $isAttendingMeeting): self
+    {
+        $this->isAttendingMeeting = $isAttendingMeeting;
+
+        return $this;
+    }
+
+    public function getIsRemotely(): ?bool
+    {
+        return $this->isRemotely;
+    }
+
+    public function setIsRemotely(?bool $isRemotely): self
+    {
+        $this->isRemotely = $isRemotely;
+
+        return $this;
+    }
+
+    public function getIsNeedTrain(): ?bool
+    {
+        return $this->isNeedTrain;
+    }
+
+    public function setIsNeedTrain(?bool $isNeedTrain): self
+    {
+        $this->isNeedTrain = $isNeedTrain;
+
+        return $this;
+    }
+
+    public function getIsNeedFlight(): ?bool
+    {
+        return $this->isNeedFlight;
+    }
+
+    public function setIsNeedFlight(?bool $isNeedFlight): self
+    {
+        $this->isNeedFlight = $isNeedFlight;
+
+        return $this;
+    }
+
+    public function getIsNeedHotel(): ?bool
+    {
+        return $this->isNeedHotel;
+    }
+
+    public function setIsNeedHotel(?bool $isNeedHotel): self
+    {
+        $this->isNeedHotel = $isNeedHotel;
+
+        return $this;
+    }
+
+    public function getTrainStation(): ?string
+    {
+        return $this->trainStation;
+    }
+
+    public function setTrainStation(?string $trainStation): self
+    {
+        $this->trainStation = $trainStation;
+
+        return $this;
+    }
+
+    public function getAirport(): ?string
+    {
+        return $this->airport;
+    }
+
+    public function setAirport(?string $airport): self
+    {
+        $this->airport = $airport;
 
         return $this;
     }
