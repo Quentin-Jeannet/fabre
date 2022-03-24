@@ -85,3 +85,5 @@ register:
   trainFlightNo : Nous notons que vous venez par vos propres moyens
 wordings:
   noRecords: no records found
+mail:
+  subject: Thank you for your answer

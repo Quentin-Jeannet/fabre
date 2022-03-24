@@ -2,23 +2,25 @@
 
 namespace App\Controller;
 
-use App\Entity\Speciality;
 use App\Entity\User;
+use App\Entity\Speciality;
+use App\Security\EmailVerifier;
+use Symfony\Component\Mime\Email;
 use App\Form\RegistrationFormType;
 use App\Security\AppAuthenticator;
-use App\Security\EmailVerifier;
+use Symfony\Component\Mime\Address;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mime\Address;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
+use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
 class RegistrationController extends AbstractController
 {
@@ -32,7 +34,7 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthenticator $authenticator, EntityManagerInterface $entityManager, MailerInterface $mailer, TranslatorInterface $translator): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -48,9 +50,33 @@ class RegistrationController extends AbstractController
                 )
             );
             $user->setIsVerified(true);
+            if($form->getData()->getSpeciality()->getSlug() == "data_manager"){
+                $user->setRoles(['ROLE_USER', 'ROLE_DATA_MANAGER']);
+            }
+            if($form->getData()->getSpeciality()->getSlug() == "physician"){
+                $user->setRoles(['ROLE_USER', 'ROLE_PHYSICIAN']);
+            }
 
             $entityManager->persist($user);
             $entityManager->flush();
+
+            $subject = $translator->trans('mail.subject');
+
+            if($user->getIsAttendingMeeting() == true){
+                $email = (new TemplatedEmail())
+                ->from('hello@example.com')
+                ->to($user->getEmail())
+                ->subject($subject)
+                ->htmlTemplate('mail/isAttentingMeeting.html.twig');
+                $mailer->send($email);
+            }else{
+                $email = (new TemplatedEmail())
+                ->from($this->getParameter('app.mailFrom'))
+                ->to($user->getEmail())
+                ->subject($subject)
+                ->htmlTemplate('mail/isNotAttentingMeeting.html.twig');
+                $mailer->send($email);
+            }
 
 
 

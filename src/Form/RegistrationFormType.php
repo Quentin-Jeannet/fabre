@@ -42,6 +42,10 @@ class RegistrationFormType extends AbstractType
                 "expanded" => true,
                 "multiple" => false,
                 "label"=>"tableHeaders.remotely",
+                'data' => null,
+                'required' => false,
+                'placeholder' => false
+
                 ])
             ->add('isNeedTrain', ChoiceType::class, [
                 'choices' => [
@@ -51,6 +55,8 @@ class RegistrationFormType extends AbstractType
                 "expanded" => true,
                 "multiple" => false,
                 "label"=>"tableHeaders.train",
+                'required' => false,
+                'placeholder' => false
                 ],
                 )
             ->add('trainStation', TextType::class, [
@@ -67,6 +73,8 @@ class RegistrationFormType extends AbstractType
                 "expanded" => true,
                 "multiple" => false,
                 "label"=>"tableHeaders.flight",
+                'required' => false,
+                'placeholder' => false
                 ])
             ->add('airport', TextType::class, [
                 "label"=>"tableHeaders.airport",
@@ -81,6 +89,9 @@ class RegistrationFormType extends AbstractType
                 "expanded" => true,
                 "multiple" => false,
                 "label"=>"tableHeaders.hotel",
+                'required' => false,
+                'placeholder' => false
+
                 ])
             ->add('firstname', TextType::class, ["label"=>"tableHeaders.firstname"])
             ->add('name', TextType::class, ["label"=>"tableHeaders.name"])
