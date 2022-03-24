@@ -18,14 +18,27 @@ body{
     }
     .navbar{
         background: url(../images/bg-navbar.png);
-        .nav-link{
-            font-family: 'gilroy-mediumuploaded_file';
-            color: white;
-            &:hover{
-                text-decoration: underline;
+        background-repeat: no-repeat;
+        // background-size: auto 100%;
+        background-attachment: fixed;
+        background-color: $titleColor;
+
+        .navbar-toggler{
+            &:focus{
+                box-shadow: 0 0 0 0rem;
+            }
+            color: rgba(255,255,255,1);
+            border-color: rgba(255,255,255,1);
+        }
+        .navbar-nav{
+            .nav-link{
+                font-family: 'gilroy-mediumuploaded_file';
+                color: white;
+                &:hover{
+                    text-decoration: underline;
+                }
             }
         }
-
     }
     .content-wrapper{
         min-height: calc(100vh - 105px);

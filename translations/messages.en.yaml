@@ -83,6 +83,9 @@ register:
   isAttendingNo : We thank you for your answer. Pierre Fabre Nerlyfe Team
   remotelyYes: A link to login will be sent to the address you will register below
   trainFlightNo : Nous notons que vous venez par vos propres moyens
+  isAttendingNo : We thank you for your answer. Pierre Fabre Nerlyfe Team
+  remotelyYes: A link to login will be sent to the address you will register below
+  trainFlightNo : Nous notons que vous venez par vos propres moyens
 wordings:
   noRecords: no records found
 mail:
