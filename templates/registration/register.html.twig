@@ -3,7 +3,6 @@
 {% block title %}{% trans %}register.title{% endtrans %}{% endblock %}
 
 {% block body %}
-<div class="container">
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
@@ -12,6 +11,8 @@
 
     {{ form_start(registrationForm) }}
 
+    <fieldset>
+        <legend class="legend px-2">{% trans %}register.survey{% endtrans %}</legend>
         {{ form_label(registrationForm.isAttendingMeeting, null, {'label_attr': {'class': 'col-md-12'}}) }}
         <div class="d-flex">
             {% for check in registrationForm.isAttendingMeeting %}
@@ -62,28 +63,34 @@
                     {{ form_row(registrationForm.airport)}}
                 </div>
         
-                {{ form_label(registrationForm.isNeedHotel, null, {'label_attr': {'class': 'col-md-12'}}) }}
-                <div class="d-flex">
-                    {% for check in registrationForm.isNeedHotel %}
-                    <div class="me-2">
-                        {{ form_widget(check) }}
-                    </div>
-                    {% endfor %}
-                </div>
+                
             </div>
             <div class="d-none" id="blockRemotelyYes">{% trans %}register.remotelyYes{% endtrans %}</div>
 
         </div>
 
         {{ form_row(registrationForm.speciality)}}
-
-        <div class="my-3">
-            {{form_rest(registrationForm)}}
+        <div class="d-none" id="physician">
+            {{ form_label(registrationForm.isNeedHotel, null, {'label_attr': {'class': 'col-md-12'}}) }}
+                    <div class="d-flex">
+                        {% for check in registrationForm.isNeedHotel %}
+                        <div class="me-2">
+                            {{ form_widget(check) }}
+                        </div>
+                        {% endfor %}
+                    </div>
         </div>
+    </fieldset>
 
-        <button type="submit" class="btn">{% trans %}cta.valid{% endtrans %}</button>
-    {{ form_end(registrationForm) }}
-</div>
+    <fieldset>
+        <legend class="legend px-2">{% trans %}register.yourInfo{% endtrans %}</legend>
+        {{form_rest(registrationForm)}}
+    </fieldset>
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">{% trans %}cta.valid{% endtrans %}</button>
+    </div>
+{{ form_end(registrationForm) }}
+
 {% endblock %}
 
 {% block javascripts %}
@@ -100,6 +107,8 @@
     let blockRemotelyYes = document.getElementById('blockRemotelyYes')
     let trainYes = document.getElementById('trainYes')
     let flightYes = document.getElementById('flightYes')
+    let speciality = document.getElementById('registration_form_speciality')
+    let physician = document.getElementById('physician')
     // console.log(blockMeetingYes);
     // let meetingNo = document.getElementById('registration_form_isAttendingMeeting_1')
     // meeting.addEventListener('change', function(event) {
@@ -185,6 +194,10 @@
                 }
             }
         })
+    })
+
+    speciality.addEventListener('change', function (e) {
+        console.log(this.value);
     })
 
 

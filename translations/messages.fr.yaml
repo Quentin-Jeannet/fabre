@@ -20,6 +20,10 @@ titles:
   newAdmin: Nouvel administrateur
   showUser: Utilisateur
   showAdmin: Administrateur
+  contact: Contact/Infos
+  face: Programme présentiel
+  remote: Programme distanciel
+  home: Accueil
 tableHeaders:
   actions: Actions
   id: Id
@@ -51,5 +55,13 @@ alerts:
 cta: 
   valid: Valider 
   update: Modifier
+nav:
+  presentiel: Programme présentiel 
+  remotely: Programme distanciel
+  register: Inscription
+  contact: Contact/Infos  
 register:
   title: Inscription
+  survey: Survey
+  yourInfo: Vos informations personnelles
+

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}titles.face{% endtrans %}{% endblock %}
+
+{% block body %}
+
+<h1>{% trans %}titles.face{% endtrans %}</h1>
+<div class="pt-3">
+    {% if program.description is not null %}
+    <div>{{program.description}}</div>
+    {% endif %}
+    <div class="text-center">
+        <img src="{{asset('images/programs/' ~ program.imageName)}}" alt="" class="img-fluid border">
+    </div>
+</div>
+
+{% endblock %}

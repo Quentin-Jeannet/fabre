@@ -20,6 +20,10 @@ titles:
   newAdmin: New administrator
   showUser: User
   showAdmin: Administrator
+  contact: Contact/Infos
+  face: On-site program
+  remote: Remotely program
+  home: Home
 tableHeaders:
   actions: Actions
   id: Id
@@ -53,3 +57,14 @@ cta:
   update: Update
   register:
   title: Registration
+nav:
+  presentiel: On-site program 
+  remotely: Remotely program
+  register: Register
+  contact: Contact/Infos
+register:
+  title: Register
+  survey: Questionnaire
+  yourInfo: Your personal information
+
+
