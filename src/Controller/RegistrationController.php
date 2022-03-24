@@ -126,4 +126,15 @@ class RegistrationController extends AbstractController
 
         return $this->redirectToRoute('app_register');
     }
+    /**
+     * @route("/testmail", name="test_mail")
+     */
+    public function testMail(MailerInterface $mailer){
+        $email = (new TemplatedEmail())
+        ->from('hello@example.com')
+        ->to('hello@example.com')
+        ->subject('subject')
+        ->htmlTemplate('mail/isAttentingMeeting.html.twig');
+        $mailer->send($email);
+    }
 }
