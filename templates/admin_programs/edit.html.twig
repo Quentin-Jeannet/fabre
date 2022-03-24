@@ -1,0 +1,12 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}{% trans %}titles.editProgram{% endtrans %}{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_admin_programs_index') }}" class="btn btn-primary"><i class="align-middle" data-feather="arrow-left"></i></a>
+    <h1>{% trans %}titles.editProgram{% endtrans %}</h1>
+
+    {{ include('admin_programs/_form.html.twig', {'button_label': 'Update'}) }}
+
+    {# {{ include('admin_programs/_delete_form.html.twig') }} #}
+{% endblock %}

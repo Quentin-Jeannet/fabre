@@ -1,0 +1,45 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}{% trans %}titles.programs{% endtrans %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans %}titles.programs{% endtrans %}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                {% if is_granted("ROLE_SUPERADMIN") %}
+                <th>{% trans %}tableHeaders.id{% endtrans %}</th>
+                {% endif %}
+                <th>{% trans %}tableHeaders.name{% endtrans %}</th>
+                {# <th>{% trans %}tableHeaders.description{% endtrans %}</th> #}
+                <th>{% trans %}tableHeaders.imageName{% endtrans %}</th>
+                <th>{% trans %}tableHeaders.updatedAt{% endtrans %}</th>
+                <th class="text-end">{% trans %}tableHeaders.actions{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for program in programs %}
+            <tr>
+                {% if is_granted("ROLE_SUPERADMIN") %}
+                <td>{{ program.id }}</td>
+                {% endif %}    
+                <td>{{ program.name }}</td>
+                {# <td>{{ program.description }}</td> #}
+                <td><a href="{{ asset('images/programs/' ~  program.imageName) }}" data-lightbox="image-1" data-title="{{ program.name }}"><img src="{{ asset('images/programs/' ~  program.imageName) }}" alt="" class="img-list"></a></td>
+                <td>{{ program.updatedAt ? program.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td  class="text-end">
+                    <a href="{{ path('app_admin_programs_show', {'id': program.id}) }}" class="btn btn-warning text-white"><i class="align-middle" data-feather="eye"></i></a>
+                    <a href="{{ path('app_admin_programs_edit', {'id': program.id}) }}" class="btn btn-primary"><i class="align-middle" data-feather="edit-2"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="{% if is_granted("ROLE_SUPERADMIN") %}5{% else %}4{% endif %}">{% trans %}wordings.noRecords{% endtrans %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# <a href="{{ path('app_admin_programs_new') }}">Create new</a> #}
+{% endblock %}

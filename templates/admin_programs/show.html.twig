@@ -1,0 +1,44 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}{% trans %}titles.program{% endtrans %}{% endblock %}
+
+{% block body %}
+<div class="d-flex justify-content-between">
+<a href="{{ path('app_admin_programs_index') }}" class="btn btn-primary">
+<i class="align-middle" data-feather="arrow-left"></i></a>
+<div>
+<a href="{{ path('app_admin_programs_edit', {'id': program.id}) }}" class="btn btn-primary ms-3">
+<i class="align-middle" data-feather="edit-2"></i></a>
+</div>
+</div>
+
+    <h1>{% trans %}titles.program{% endtrans %}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>{% trans %}tableHeaders.id{% endtrans %}</th>
+                <td>{{ program.id }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}tableHeaders.name{% endtrans %}</th>
+                <td>{{ program.name }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}tableHeaders.description{% endtrans %}</th>
+                <td>{{ program.description }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}tableHeaders.imageName{% endtrans %}</th>
+                <td><a href="{{ asset('images/programs/' ~  program.imageName) }}" data-lightbox="image-1" data-title="{{ program.name }}"><img src="{{ asset('images/programs/' ~ program.imageName) }}" alt="" class="img-show"></a></td>
+            </tr>
+            <tr>
+                <th>{% trans %}tableHeaders.updatedAt{% endtrans %}</th>
+                <td>{{ program.updatedAt ? program.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    {# {{ include('admin_programs/_delete_form.html.twig') }} #}
+{% endblock %}
