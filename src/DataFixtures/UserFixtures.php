@@ -44,11 +44,28 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         $user->setPassword($encodedPassword);
         $manager->persist($user);
 
+        // --- ADMIN/SUPERADMIN --- //
+        $user = new User();
+        $user->setName('nesci');
+        $user->setFirstname('henri');
+        $user->setEmail('cmeneux@graphikchannel.com');
+        $user->setRoles(['ROLE_USER', 'ROLE_ADMIN']);
+        $user->setInstitutionName('Affaires de Santé');
+        $user->setBusinessAddress('23 rue Balzac');
+        $user->setZipcode(75008);
+        $user->setCity('Paris');
+        $user->setCountry('FR');
+        $user->setMobilePhone('0631299943');
+        $user->setIsWaitingCertificate(false);
+        $encodedPassword = $this->encoder->hashPassword($user, "pass");
+        $user->setPassword($encodedPassword);
+        $manager->persist($user);
+
         $user = new User();
         $user->setName('jeannet');
         $user->setFirstname('quentin');
         $user->setEmail('quentin@graphikchannel.com');
-        $user->setRoles(['ROLE_USER', 'ROLE_ADMIN']);
+        $user->setRoles(['ROLE_USER', 'ROLE_ADMIN', 'ROLE_SUPERADMIN']);
         $user->setInstitutionName('Graphik Channel');
         $user->setBusinessAddress('11 rue Jouye Rouve');
         $user->setZipcode(75020);
