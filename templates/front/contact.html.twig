@@ -4,6 +4,10 @@
 
 {% block body %}
 
+{% if contact.title is defined and contact.title is not null %}
 <h1>{% trans %}titles.contact{% endtrans %}</h1>
-
+{% endif %}
+<div class="mt-4">
+{{ contact.content|raw }}
+</div>
 {% endblock %}

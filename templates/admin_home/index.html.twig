@@ -1,0 +1,43 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}{% trans %}titles.homes{% endtrans %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans %}titles.homes{% endtrans %}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                {% if is_granted("ROLE_SUPERADMIN") %}
+                <th>{% trans %}tableHeaders.id{% endtrans %}</th>
+                {% endif %}
+                <th>{% trans %}tableHeaders.title{% endtrans %}</th>
+                {# <th>Content</th> #}
+                {# <th>IsActive</th> #}
+                <th class="text-end">{% trans %}tableHeaders.actions{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for home in homes %}
+            <tr>
+                {% if is_granted("ROLE_SUPERADMIN") %}
+                <td>{{ home.id }}</td>
+                {% endif %}
+                <td>{% if home.title is defined and home.title is not null %}{{ home.title }}{% else %}N/A{% endif %}</td>
+                {# <td>{{ home.content }}</td> #}
+                {# <td>{{ home.isActive ? 'Yes' : 'No' }}</td> #}
+                <td class="text-end">
+                    <a href="{{ path('app_admin_home_show', {'id': home.id}) }}" class="btn btn-warning text-white"><i class="align-middle" data-feather="eye"></i></a>
+                    <a href="{{ path('app_admin_home_edit', {'id': home.id}) }}" class="btn btn-primary"><i class="align-middle" data-feather="edit-2"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="{% if is_granted("ROLE_SUPERADMIN") %}2{% else %}3{% endif %}">{% trans %}wordings.noRecords{% endtrans %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# <a href="{{ path('app_admin_home_new') }}">Create new</a> #}
+{% endblock %}

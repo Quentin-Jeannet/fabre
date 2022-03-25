@@ -4,6 +4,9 @@
 
 {% block body %}
 
-<h1>{% trans %}titles.home{% endtrans %}</h1>
+{% if home.title is defined and home.title is not null %}
+<h1>{{ home.title }}</h1>
+{% endif %}
+<div class="mt-4">{{ home.content|raw}}</div>
 
 {% endblock %}

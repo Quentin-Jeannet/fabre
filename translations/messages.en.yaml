@@ -5,12 +5,14 @@ menus:
   specialities: Specialities
   sessionAlonis: Alonis sessions
   sessionMaxiqua: Maxiqa sessions
+  home: Home
+  contact: Contact/Infos
   programs: Programs
   titles:
     block1: Utilisateurs et spécialités
     block2: Alonis Live
     block3: Maxiqa sessions
-    block4: Programs
+    block4: Contents
 titles:
   users: Users
   administrators: Administrators
@@ -23,15 +25,19 @@ titles:
   showUser: User
   showAdmin: Administrator
   contact: Contact/Infos
+  editContact: Edit contact/infos
   face: On-site program
   remote: Remotely program
   home: Home
+  homes: Homes
+  editHome: Edit Home
   newSpeciality: New speciality
   speciality: Speciality
   editSpeciality: Edit Speciality
   programs: Programs
   program: Program
   editProgram: Edit program
+  exportXls: Export XLS
 tableHeaders:
   actions: Actions
   id: Id
@@ -61,6 +67,8 @@ tableHeaders:
   description: Description 
   updatedAt: Updated at
   imageName: Image
+  title: Title
+  content: Content
 choices:
   yes: Yes 
   no: No

@@ -57,6 +57,16 @@
             {% endtrans %}
             </li>
             <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ path('app_admin_home_index') }}">
+                    <i class="align-middle" data-feather="home"></i>
+                    <span class="align-middle">
+                        {% trans %}
+                        menus.home 
+                        {% endtrans %}
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ path('app_admin_programs_index') }}">
                     <i class="align-middle" data-feather="list"></i>
                     <span class="align-middle">
@@ -65,6 +75,16 @@
                         {% endtrans %}
                     </span>
                 </a>
+            </li>
+            <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ path('app_admin_contact_index') }}">
+                <i class="align-middle" data-feather="mail"></i>
+                <span class="align-middle">
+                    {% trans %}
+                    menus.contact 
+                    {% endtrans %}
+                </span>
+            </a>
             </li>
             {% if useAlonis %}
             <li class="sidebar-header">
