@@ -14,7 +14,7 @@ class HomeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title', TextType::class, ["label"=>"tableHeaders.title"])
+            ->add('title', TextType::class, ["label"=>"tableHeaders.title",'required' =>false])
             ->add('content', CKEditorType::class, ["label"=>"tableHeaders.content"])
             // ->add('isActive')
         ;
