@@ -48,7 +48,7 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         $user = new User();
         $user->setName('nesci');
         $user->setFirstname('henri');
-        $user->setEmail('cmeneux@graphikchannel.com');
+        $user->setEmail('henrinesci@gmail.com');
         $user->setRoles(['ROLE_USER', 'ROLE_ADMIN']);
         $user->setInstitutionName('Affaires de Santé');
         $user->setBusinessAddress('23 rue Balzac');

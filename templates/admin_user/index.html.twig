@@ -9,11 +9,14 @@
 {% endblock %}
 
 {% block body %}
+    <div class="d-flex justify-content-between">
     {% if type == "user" %}
     <a href="{{ path('app_user_new') }}" class="btn btn-primary" >{% trans %}titles.newUser{% endtrans %}</a>
+    <a href="{{ path('app_users_export') }}" class="btn btn-success">{% trans %}titles.exportXls{% endtrans %}</a>
     {% else %}
     <a href="{{ path('app_admin_new') }}" class="btn btn-primary" >{% trans %}titles.newAdmin{% endtrans %}</a>
     {% endif %}
+    </div>
     <h1>
         {% if type == "user" %}
             {% trans %}titles.indexUsers{% endtrans %}

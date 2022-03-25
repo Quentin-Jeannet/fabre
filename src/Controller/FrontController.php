@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Repository\ContactRepository;
+use App\Repository\HomeRepository;
 use App\Repository\ProgramsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,10 +14,11 @@ class FrontController extends AbstractController
     /**
      * @Route("/", name="app_front")
      */
-    public function index(): Response
+    public function index(HomeRepository $homeRepository): Response
     {
+        $home = $homeRepository->findOneBy(["isActive"=>true]);
         return $this->render('front/index.html.twig', [
-            'controller_name' => 'FrontController',
+            'home' => $home,
         ]);
     }
     /**
@@ -40,10 +43,11 @@ class FrontController extends AbstractController
     /**
      * @Route("/contact", name="app_contact")
      */
-    public function contact(): Response
+    public function contact(ContactRepository $contactRepository): Response
     {
+        $contact = $contactRepository->findOneBy(["isActive"=>true]);
         return $this->render('front/contact.html.twig', [
-            'controller_name' => 'FrontController',
+            'contact' => $contact,
         ]);
     }
 }
