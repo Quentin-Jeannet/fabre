@@ -41,6 +41,7 @@
                     </span>
                 </a>
             </li>
+            {% if is_granted('ROLE_SUPERADMIN') %}
             <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ path('app_admin_speciality_index') }}">
                     <i class="align-middle" data-feather="award"></i>
@@ -51,6 +52,7 @@
                     </span>
                 </a>
             </li>
+            {% endif %}
             <li class="sidebar-header">
             {% trans %}
             menus.titles.block4

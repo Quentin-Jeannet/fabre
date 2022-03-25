@@ -39,7 +39,7 @@ class RegistrationController extends AbstractController
         ->from('no-reply@nerlyfe-investigator-meeting.com')
         ->to('quentin@graphikchannel.com')
         ->subject('subject')
-        ->htmlTemplate('mail/isNotAttentingMeeting.html.twig');
+        ->htmlTemplate('mail/save-the-date.html');
         $mailer->send($email);
 
         return $this->redirectToRoute('app_front');
