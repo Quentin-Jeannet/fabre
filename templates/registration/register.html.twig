@@ -91,7 +91,12 @@
         {{form_rest(registrationForm)}}
     </fieldset>
     <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary">{% trans %}cta.valid{% endtrans %}</button>
+        <button
+        type="submit"
+        class="btn btn-primary g-recaptcha"
+        data-sitekey="6LcUxwwfAAAAAGgQ9pG3y3tqHNqGWmXYlCWNPOBn" 
+        data-callback='onSubmit' 
+        data-action='submit'>{% trans %}cta.valid{% endtrans %}</button>
     </div>
 {{ form_end(registrationForm) }}
 
@@ -241,4 +246,10 @@
 
 
 </script>
+<script>
+   function onSubmit(token) {
+     document.getElementById("register-form").submit();
+   }
+//    window.onSubmit = onSubmit;
+ </script>
 {% endblock %}

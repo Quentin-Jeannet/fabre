@@ -39,7 +39,7 @@ class RegistrationController extends AbstractController
         ->from('no-reply@nerlyfe-investigator-meeting.com')
         ->to('quentin@graphikchannel.com')
         ->subject('subject')
-        ->htmlTemplate('mail/isAttentingMeeting.html.twig');
+        ->htmlTemplate('mail/isNotAttentingMeeting.html.twig');
         $mailer->send($email);
 
         return $this->redirectToRoute('app_front');
@@ -51,7 +51,7 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthenticator $authenticator, EntityManagerInterface $entityManager, MailerInterface $mailer, TranslatorInterface $translator): Response
     {
         $user = new User();
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form = $this->createForm(RegistrationFormType::class, $user, ['attr' => ["id" => "register-form"]]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -78,7 +78,7 @@ class RegistrationController extends AbstractController
 
             if($user->getIsAttendingMeeting() == true){
                 $email = (new TemplatedEmail())
-                ->from('hello@example.com')
+                ->from($this->getParameter('app.mailFrom'))
                 ->to($user->getEmail())
                 ->subject($subject)
                 ->htmlTemplate('mail/isAttentingMeeting.html.twig');
@@ -92,17 +92,6 @@ class RegistrationController extends AbstractController
                 $mailer->send($email);
             }
 
-
-
-            // generate a signed url and email it to the user
-            // $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
-            //     (new TemplatedEmail())
-            //         ->from(new Address('no-reply@nerlyfe-investigator-meeting.com', 'no-reply'))
-            //         ->to($user->getEmail())
-            //         ->subject('Please Confirm your Email')
-            //         ->htmlTemplate('registration/confirmation_email.html.twig')
-            // );
-            // do anything else you need here, like send an email
 
             return $this->redirectToRoute('app_front');
         }
