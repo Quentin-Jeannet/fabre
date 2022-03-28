@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use App\Entity\Speciality;
+use App\Repository\SpecialityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -36,8 +37,8 @@ class RegistrationFormType extends AbstractType
                 ])
             ->add('isRemotely', ChoiceType::class, [
                 'choices' => [
-                    'choices.yes' =>true,
-                    'choices.no' =>false,
+                    'choices.remotely' =>true,
+                    'choices.physicaly' =>false,
                 ],
                 "expanded" => true,
                 "multiple" => false,
@@ -104,7 +105,14 @@ class RegistrationFormType extends AbstractType
             ->add('country', CountryType::class, ["label"=>"tableHeaders.country", "data" => "France"])
             ->add('mobilePhone', TextType::class, ["label"=>"tableHeaders.mobilePhone"])
             ->add('isWaitingCertificate', ChoiceType::class, ['choices' => ['choices.yes' => true, 'choices.no' => false], "label"=>"tableHeaders.isWaitingCertificate"])
-            ->add('speciality', EntityType::class, ["class"=>Speciality::class, "label"=>"tableHeaders.speciality"])
+            ->add('speciality', EntityType::class, [
+                    "class"=>Speciality::class, 
+                    "label"=>"tableHeaders.speciality",
+                    'query_builder' => function (SpecialityRepository $er) {
+                        return $er->createQueryBuilder('s')
+                            ->orderBy('s.name', 'DESC');
+                    },
+                    ])
             // ->add('password', PasswordType::class, [
             //     // instead of being set onto the object directly,
             //     // this is read and encoded in the controller

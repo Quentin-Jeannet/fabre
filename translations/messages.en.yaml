@@ -41,21 +41,21 @@ titles:
 tableHeaders:
   actions: Actions
   id: Id
-  name: Name
-  firstname: Firstname
+  name: Last Name
+  firstname: First Name
   email: Email
   speciality: Speciality
   password: Password 
   repeatPassword: Repeat password
   institution: Institution 
-  businessAddress: Business address
+  businessAddress: Institution address
   city: City
   zipcode: Zipcode
   country: Country
   mobilePhone: Mobile phone
-  isWaitingCertificate: Wants the certificate
+  isWaitingCertificate: Attendance certificate mandatory
   meeting: I am attending the INVESTIGATOR meeting of the NERLYFE study
-  remotely: I am attending the investigator meeting of the NERLYFE study remotely
+  remotely: 'I am attending the investigator meeting of the NERLYFE study :'
   train: I need a train
   station: Please indicate the name of the train station that you will be travelling from
   flight: I need a flight
@@ -72,6 +72,8 @@ tableHeaders:
 choices:
   yes: Yes 
   no: No
+  remotely : Remotely
+  physicaly : On site
 alerts:
   delete: Are you sure you want to delete this item?
 cta: 
@@ -80,17 +82,17 @@ cta:
   register:
   title: Registration
 nav:
-  presentiel: On-site program 
+  presentiel: Program 
   remotely: Remotely program
   register: Register
-  contact: Contact/Infos
+  contact: Contact/Venue
 register:
   title: Register
   survey: Survey
   yourInfo: Your personal information
   isAttendingNo : We thank you for your answer. Pierre Fabre Nerlyfe Team
-  remotelyYes: A link to login will be sent to the address you will register below
-  trainFlightNo : Nous notons que vous venez par vos propres moyens
+  remotelyYes: A link to login to the investigator meeting will be sent to the email address indicated below in your personal information.
+  trainFlightNo : We note that you come by your own means
 wordings:
   noRecords: no records found
 mail:
