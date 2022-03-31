@@ -51,7 +51,7 @@ class AdminUserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // dd($user->getSpeciality());
             $roles = ["ROLE_USER"];
-            array_push($roles, strtoupper($user->getSpeciality()));
+            array_push($roles, 'ROLE_'.strtoupper($user->getSpeciality()));
             $user->setRoles($roles);
             $password = $user->getPassword();
             $user->setPassword($userPasswordHasherInterface->hashPassword($user, $password));
@@ -132,7 +132,7 @@ class AdminUserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_admin_user_delete", methods={"POST"})
+     * @Route("/{id}/user", name="app_user_delete", methods={"POST"})
      */
     public function delete(Request $request, User $user, UserRepository $userRepository): Response
     {
@@ -140,6 +140,17 @@ class AdminUserController extends AbstractController
             $userRepository->remove($user);
         }
 
-        return $this->redirectToRoute('app_admin_user_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
+    }
+    /**
+     * @Route("/{id}", name="app_admin_delete", methods={"POST"})
+     */
+    public function adminDelete(Request $request, User $user, UserRepository $userRepository): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+            $userRepository->remove($user);
+        }
+
+        return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
     }
 }

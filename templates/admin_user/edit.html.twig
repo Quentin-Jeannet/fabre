@@ -12,10 +12,11 @@
 <div class="d-flex justify-content-between">
 {% if type =="user" %}
 <a href="{{ path('app_user_index') }}" class="btn btn-primary"><i class="align-middle" data-feather="arrow-left"></i></a>
+{{ include('admin_user/_delete_form.html.twig') }}
 {% else %}
 <a href="{{ path('app_admin_index') }}" class="btn btn-primary"><i class="align-middle" data-feather="arrow-left"></i></a>
+{{ include('admin_user/_delete_admin_form.html.twig') }}
 {% endif %}
-{{ include('admin_user/_delete_form.html.twig') }}
 </div>
     <h1>
     {% if type == "user" %}

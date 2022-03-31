@@ -1,0 +1,72 @@
+<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:8px"><strong>CONVENTION DE FORMATION PROFESSIONNELLE</strong><br />
+<strong>(Articles L. 6353-1 du Code du travail)</strong><br />
+<strong>Entre les soussign&eacute;s :</strong></span></span></p>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>KOUROS FORMATION, une marque GRAPHIK CHANNEL, </strong>repr&eacute;sent&eacute; par M. Christian MENEUX, enregistr&eacute; sous le num&eacute;ro SIRET 492 486 121 00022, dont le si&egrave;ge social est situ&eacute; &agrave;&nbsp;: 11, Rue&nbsp;Jouye Rouve&nbsp;75020 PARIS &nbsp;enregistr&eacute; sous le num&eacute;ro de d&eacute;claration d&rsquo;activit&eacute; 11 75&nbsp;41 542 75 aupr&egrave;s de la Direction R&eacute;gionale des Entreprises, de la Concurrence, de la Consommation, du Travail et de l&rsquo;Emploi (DIRECCTE)<br />
+<strong>Et&nbsp;:</strong><strong> </strong><strong>{%COMPANY%} repr&eacute;sent&eacute;&nbsp;par {%CONTACT%},&nbsp;domicili&eacute;&nbsp;{%ADDRESS%} et enregistr&eacute;e sous le n&deg; de Siret&nbsp;: {%SIRET%}</strong></span></span></p>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif">Est conclue la convention suivante, en application des dispositions du Livre III de la Sixi&egrave;me partie du Code du travail portant organisation de la formation professionnelle continue.<br />
+<strong>Article 1 &ndash; OBJET DE LA CONVENTION</strong><br />
+L&rsquo;organisme Kouros Formation organisera l&rsquo;action de formation suivante :</span></span></p>
+
+<ul>
+	<li><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Intitul&eacute; de l&rsquo;action de formation</strong> : <strong>{%MODULE%}</strong></span></span></li>
+	<li><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Niveau</strong>:<strong>&nbsp;{%NIVEAU%}</strong></span></span></li>
+	<li><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Objectifs op&eacute;rationnels&nbsp;:</strong> <strong>Programme et m&eacute;thodes : joint en annexe 1 (programme)</strong>.</span></span></li>
+	<li><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Type d&rsquo;action de formation</strong> (<strong>article L.6313-1 du Code du travail)</strong>: d&eacute;veloppement des comp&eacute;tences.</span></span></li>
+	<li><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Dates&nbsp;: &nbsp;{%DATES%} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong></span></span></li>
+	<li><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Dur&eacute;e&nbsp;: {%DURATION%}</strong></span></span></li>
+	<li><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Lieu&nbsp;: {%PLACE%}</strong></span></span></li>
+</ul>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Le programme d&eacute;taill&eacute; de l&rsquo;action de formation figure en annexe de la pr&eacute;sente convention.</strong><br />
+<strong>Article 2 &ndash; Effectif form&eacute;</strong><br />
+L&rsquo;Organisme Kouros Formation accueillera les personnes suivantes&nbsp;:</span></span></p>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif">{%TABLE%}</span></span></p>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Article 3 &ndash; Dispositions financi&egrave;res</strong><br />
+En contrepartie de cette action de formation, l&rsquo;entreprise s&rsquo;acquittera soit directement, soit par le biais de son OPCA&nbsp; des co&ucirc;ts de formation suivants&nbsp;&agrave; r&eacute;ception de facture<br />
+Co&ucirc;t par stagiaire&nbsp;: {%AMOUNT%} &euro;<br />
+Co&ucirc;t total (HT)&nbsp;: {%TOTALHT%} &euro; &nbsp;<br />
+TVA : NA* - &nbsp;{%VATDESC%}<br />
+<strong>Co&ucirc;t total TTC&nbsp;:&nbsp;{%TOTALHT%} &euro;&nbsp; //&nbsp;</strong>Subrogation de paiement&nbsp;: {%SUBROGATION%}<br />
+Cette somme couvre l&rsquo;int&eacute;gralit&eacute; des frais engag&eacute;s de l&rsquo;organisme de formation pour cette session.</span></span></p>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Article 4 &ndash; Modalit&eacute;s de r&egrave;glement</strong><br />
+Le paiement sera d&ucirc; &agrave; r&eacute;ception de la facture.</span></span></p>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Article 5 &ndash; D&eacute;dit ou abandon</strong><br />
+En cas de d&eacute;dit par l&rsquo;entreprise &agrave; moins de 7 jours francs avant le d&eacute;but de l&rsquo;action mentionn&eacute;e &agrave; l&rsquo;article 1, ou d&rsquo;abandon en cours de formation par un ou plusieurs stagiaires, l&rsquo;organisme remboursera sur le co&ucirc;t total, les sommes qu&rsquo;il n&rsquo;aura pas r&eacute;ellement d&eacute;pens&eacute;es ou engag&eacute;es pour la r&eacute;alisation de ladite action.</span></span></p>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Article 6 &ndash; Diff&eacute;rends &eacute;ventuels</strong><br />
+Si une contestation ou un diff&eacute;rend relevant de l&rsquo;ex&eacute;cution ou l&rsquo;interpr&eacute;tation des pr&eacute;sentes ne peut &ecirc;tre r&eacute;gl&eacute; &agrave; l&rsquo;amiable, le tribunal de Paris sera seul comp&eacute;tent pour r&eacute;gler le litige.</span></span></p>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Article 7 &ndash; Modalit&eacute;s techniques</strong><br />
+En cas de&nbsp;formation en Intra-entreprise, le mat&eacute;riel suivant est fourni par l&#39;entreprise: une salle &eacute;quip&eacute;e d&#39;un vid&eacute;o-projecteur, un poste informatique par participant &eacute;quip&eacute; de la version &agrave; jour du logiciel valid&eacute; en amont&nbsp;avec le formateur, un poste informatique pour le formateur reli&eacute; au vid&eacute;o-projecteur et&nbsp;une bonne connexion internet.</span></span></p>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Article 8 &ndash; Modalit&eacute;s Formation A Distance (FOAD)</strong><br />
+En cas de FOAD, Kouros s&#39;engage &agrave; assister le client en testant avec les participants et le formateur la bonne tenue de la FOAD avec l&#39;outil Zoom ou Teams. Kouros Formation met &agrave; disposition un assistant technique sur les jours et cr&eacute;neaux horaires de la FOAD, le t&eacute;l&eacute;phone et le mail de l&#39;assistant seront envoy&eacute;s avec l&#39;invitation &agrave; la FOAD, ainsi qu&#39;un lien vers un tutoriel et un FAQ pour aider les participants. Les participants et le formateur enverront une capture d&#39;&eacute;cran prise tous les jours (matin et/ou apr&egrave;s-midi) dat&eacute;e et avec la mention de l&#39;heure &agrave; info@kouros.fr en certifiant sur l&#39;honneur leur participation &agrave; la FOAD mentionn&eacute;e.</span></span></p>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Article 9&nbsp;&ndash; Modalit&eacute;s d&#39;&eacute;valuation</strong><br />
+L&#39;&eacute;valuation des acquis est r&eacute;alis&eacute;e en cours de formation par le formateur avec la mise en pratique &agrave; travers des exercices et &agrave; la fin de la formation avec une &eacute;tude de cas.&nbsp;</span></span></p>
+
+<p><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif">Cette convention prend effet &agrave; compter de sa signature &ndash; FAIT EN DOUBLE EXEMPLAIRES &ndash;&nbsp;</span></span><br />
+<span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif">Fait &agrave;&nbsp;:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le&nbsp;:</span></span></p>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+	<tbody>
+		<tr>
+			<td style="text-align:center"><span style="font-size:8px"><span style="font-family:Arial,Helvetica,sans-serif">Signature et cachet de l&rsquo;entreprise</span></span></td>
+			<td style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif; font-size:8px">KOUROS FORMATION</span></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td style="text-align:center">
+			<p><img alt="" src="https://maformation.kouros.fr/img/signature-kouros.jpg" style="height:80px; width:150px" /></p>
+			</td>
+		</tr>
+	</tbody>
+</table>

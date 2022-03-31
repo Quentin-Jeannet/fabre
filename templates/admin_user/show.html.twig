@@ -24,12 +24,13 @@
             </a>
         {% endif %}
         <div class="d-flex">
-            {{ include('admin_user/_delete_form.html.twig') }}
             {% if type=="user" %}
+            {{ include('admin_user/_delete_form.html.twig') }}
                 <a href="{{ path('app_user_edit', {'type': type, 'id': user.id}) }}" class="btn btn-primary ms-3">
                     <i class="align-middle" data-feather="edit-2"></i>
                 </a>
             {% else %}
+            {{ include('admin_user/_delete_admin_form.html.twig') }}
                 <a href="{{ path('app_admin_edit', {'type': type, 'id': user.id}) }}" class="btn btn-primary ms-3">
                     <i class="align-middle" data-feather="edit-2"></i>
                 </a>
