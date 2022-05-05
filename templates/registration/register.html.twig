@@ -14,7 +14,7 @@
     {{ form_start(registrationForm) }}
 
     <fieldset>
-        <legend class="legend px-2">{% trans %}register.survey{% endtrans %}</legend>
+        {# <legend class="legend px-2">{% trans %}register.survey{% endtrans %}</legend> #}
         {{ form_label(registrationForm.isAttendingMeeting, null, {'label_attr': {'class': 'col-md-12'}}) }}
         <div class="d-flex">
             {% for check in registrationForm.isAttendingMeeting %}
@@ -74,7 +74,7 @@
         </div>
 
         {{ form_row(registrationForm.speciality)}}
-        <div class="d-none" id="physician">
+        {# <div class="d-none" id="physician">
             {{ form_label(registrationForm.isNeedHotel, null, {'label_attr': {'class': 'col-md-12'}}) }}
                     <div class="d-flex">
                         {% for check in registrationForm.isNeedHotel %}
@@ -83,7 +83,7 @@
                         </div>
                         {% endfor %}
                     </div>
-        </div>
+        </div> #}
     </fieldset>
 
     <fieldset>
@@ -117,7 +117,7 @@
     let trainYes = document.getElementById('trainYes')
     let flightYes = document.getElementById('flightYes')
     let speciality = document.getElementById('registration_form_speciality')
-    let physician = document.getElementById('physician')
+    // let physician = document.getElementById('physician')
     let isAttendingNo = document.getElementById('isAttendingNo')
     var slug = 'physician';
     // console.log(blockMeetingYes);
@@ -141,9 +141,9 @@
                 if(isAttendingNo.classList.contains('d-none')){
                     isAttendingNo.classList.remove('d-none')
                 }
-                if(!physician.classList.contains('d-none')){
-                    physician.classList.add('d-none')
-                }
+                // if(!physician.classList.contains('d-none')){
+                //     physician.classList.add('d-none')
+                // }
 
             }
         })
@@ -157,9 +157,9 @@
                 if(!blockRemotelyYes.classList.contains('d-none')) {
                     blockRemotelyYes.classList.add('d-none')
                 }
-                if (slug == 'physician' && physician.classList.contains('d-none')) {
-                    physician.classList.remove('d-none')
-                }
+                // if (slug == 'physician' && physician.classList.contains('d-none')) {
+                //     physician.classList.remove('d-none')
+                // }
                 
             }else{
                 if(!blockRemotelyNo.classList.contains('d-none')) {
@@ -168,9 +168,9 @@
                 if(blockRemotelyYes.classList.contains('d-none')) {
                     blockRemotelyYes.classList.remove('d-none')
                 }
-                if(!physician.classList.contains('d-none')){
-                    physician.classList.add('d-none')
-                }
+                // if(!physician.classList.contains('d-none')){
+                //     physician.classList.add('d-none')
+                // }
             }
         })
     })
@@ -232,15 +232,15 @@
         })
         .then(function(json) {
             slug = json;
-            if (slug == "physician") {
-                if (physician.classList.contains('d-none') && document.getElementById('registration_form_isRemotely_1').checked) {
-                    physician.classList.remove('d-none')
-                }
-            } else {
-                if (!physician.classList.contains('d-none')) {
-                    physician.classList.add('d-none')
-                }
-            }
+            // if (slug == "physician") {
+            //     if (physician.classList.contains('d-none') && document.getElementById('registration_form_isRemotely_1').checked) {
+            //         physician.classList.remove('d-none')
+            //     }
+            // } else {
+            //     if (!physician.classList.contains('d-none')) {
+            //         physician.classList.add('d-none')
+            //     }
+            // }
     })
 })
 

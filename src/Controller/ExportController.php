@@ -38,9 +38,9 @@ class ExportController extends AbstractController
         $sheet->getCell('L1')->setValue('Remotely');
         $sheet->getCell('M1')->setValue('Need train');
         $sheet->getCell('N1')->setValue('Need flight');
-        $sheet->getCell('O1')->setValue('Need hostel');
-        $sheet->getCell('P1')->setValue('Train station');
-        $sheet->getCell('Q1')->setValue('Airport');
+        // $sheet->getCell('O1')->setValue('Need hostel');
+        $sheet->getCell('O1')->setValue('Train station');
+        $sheet->getCell('P1')->setValue('Airport');
         // Mise en place des datas
         $datas = [];
         foreach ($physicians as $physician) {
@@ -59,13 +59,13 @@ class ExportController extends AbstractController
                 $physician->getIsRemotely(),
                 $physician->getIsNeedTrain(),
                 $physician->getIsNeedFlight(),
-                $physician->getIsNeedHotel(),
+                // $physician->getIsNeedHotel(),
                 $physician->getTrainStation(),
                 $physician->getAirport(),
             ];
         }
         $sheet->fromArray($datas, null, 'A2', true);
-        foreach (range('A', 'Q') as $columnID) {
+        foreach (range('A', 'P') as $columnID) {
             $spreadsheet->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
         }
         // DATA MANAGES
@@ -86,9 +86,9 @@ class ExportController extends AbstractController
         $dataManagerSheet->getCell('L1')->setValue('Remotely');
         $dataManagerSheet->getCell('M1')->setValue('Need train');
         $dataManagerSheet->getCell('N1')->setValue('Need flight');
-        $dataManagerSheet->getCell('O1')->setValue('Need hostel');
-        $dataManagerSheet->getCell('P1')->setValue('Train station');
-        $dataManagerSheet->getCell('Q1')->setValue('Airport');
+        // $dataManagerSheet->getCell('O1')->setValue('Need hostel');
+        $dataManagerSheet->getCell('O1')->setValue('Train station');
+        $dataManagerSheet->getCell('P1')->setValue('Airport');
         // Mise en place des datas
         $datas = [];
         foreach ($dataManagers as $dataManager) {
@@ -107,13 +107,13 @@ class ExportController extends AbstractController
                 $dataManager->getIsRemotely(),
                 $dataManager->getIsNeedTrain(),
                 $dataManager->getIsNeedFlight(),
-                $dataManager->getIsNeedHotel(),
+                // $dataManager->getIsNeedHotel(),
                 $dataManager->getTrainStation(),
                 $dataManager->getAirport(),
             ];
         }
         $dataManagerSheet->fromArray($datas, null, 'A2', true);
-        foreach (range('A', 'Q') as $columnID) {
+        foreach (range('A', 'P') as $columnID) {
             $spreadsheet->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
         }
         // Génération et sauvegarde du fichier excell

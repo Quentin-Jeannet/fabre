@@ -82,18 +82,18 @@ class RegistrationFormType extends AbstractType
                 "label_attr" => ["class" =>"col-md-8"],
                 "required" => false,
                 ])
-            ->add('isNeedHotel', ChoiceType::class, [
-                'choices' => [
-                    'choices.yes' =>true,
-                    'choices.no' =>false,
-                ],
-                "expanded" => true,
-                "multiple" => false,
-                "label"=>"tableHeaders.hotel",
-                'required' => false,
-                'placeholder' => false
+            // ->add('isNeedHotel', ChoiceType::class, [
+            //     'choices' => [
+            //         'choices.yes' =>true,
+            //         'choices.no' =>false,
+            //     ],
+            //     "expanded" => true,
+            //     "multiple" => false,
+            //     "label"=>"tableHeaders.hotel",
+            //     'required' => false,
+            //     'placeholder' => false
 
-                ])
+            //     ])
             ->add('firstname', TextType::class, ["label"=>"tableHeaders.firstname"])
             ->add('name', TextType::class, ["label"=>"tableHeaders.name"])
             ->add('email', EmailType::class, ["label"=>"tableHeaders.email"])
